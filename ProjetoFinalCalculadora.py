@@ -2,7 +2,7 @@ import tkinter as tk
 import math
 
 botao_config = {
-    "bg":"#242742",
+    "bg":"#8B0000",
     "fg":"#d1d2de",
     "font":("consolas bold", 12),
     "height":"2",
@@ -20,12 +20,13 @@ cnt = 0
 class Calculadora:
     def __init__(self, master):
         self.calc = master
+        self.calc.title("Calculadora Científica - Projeto Guilherme Xavier")
         self.displayFrame = tk.Frame(self.calc)
         self.displayFrame.pack()
         self.buttonsFrame = tk.Frame(self.calc)
         self.buttonsFrame.pack()
         self.output = tk.Entry(self.displayFrame,
-                               width=30, relief="sunken", bd=3, font=("Nunito", 17), fg="#c9c9c5", bg="#242742")
+                               width=30, relief="sunken", bd=3, font=("Nunito", 17), fg="#c9c9c5", bg="#8B0000")
         self.output.grid(row = 0, column = 0)
         self.converte = tk.Button(self.displayFrame,
                                   botao_config, width = 3, height = 0, text = 'DEG', bg = '#e35124', command = self.degreesRadians)
