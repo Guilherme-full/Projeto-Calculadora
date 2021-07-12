@@ -1,8 +1,8 @@
 # Projeto Calculadora (Guilherme Xavier Souza)
 
-## Download do Projeto
+## Comando Para Clonar Repositório
 ```
-gh repo clone Guilherme-full/Projeto-Calculadora
+git clone https://github.com/Guilherme-full/Projeto-Calculadora.git
 ```
 
 |          | Linux | macOS | Windows |
