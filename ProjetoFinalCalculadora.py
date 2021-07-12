@@ -3,15 +3,15 @@ import math
 
 botao_config = {
     "bg":"#8B0000",
-    "fg":"#d1d2de",
+    "fg":"#FFF8DC",
     "font":("consolas bold", 12),
     "height":"2",
     "width":"7",
-    "relief":"flat",
-    "activebackground":"#313454"
+    "relief":"raised",
+    "activebackground":"#8B0000"
 }
 
-digitos = ["√", "x²", "C", "n!","sin","cos","tan","sin-¹","cos-¹","cos-¹","tan-¹"]
+digitos = ["√", "x²","Limpar","π","n!","sin","cos","tan","sin-¹","cos-¹","cos-¹","tan-¹"]
 
 deg = 1
 inversa_deg = 1
@@ -26,10 +26,10 @@ class Calculadora:
         self.buttonsFrame = tk.Frame(self.calc)
         self.buttonsFrame.pack()
         self.output = tk.Entry(self.displayFrame,
-                               width=30, relief="sunken", bd=3, font=("Nunito", 17), fg="#c9c9c5", bg="#8B0000")
+                               width=29, relief="raised", bd=3, font=("Nunito", 17), fg="#c9c9c5", bg="#8B0000")
         self.output.grid(row = 0, column = 0)
         self.converte = tk.Button(self.displayFrame,
-                                  botao_config, width = 3, height = 0, text = 'DEG', bg = '#e35124', command = self.degreesRadians)
+                                  botao_config, width = 5, height = 0, text = 'DEG', bg = '#e35124', command = self.degreesRadians)
         self.converte.grid(row = 0, column = 1)
         self.criarBotoes()
 
@@ -39,7 +39,7 @@ class Calculadora:
             ["sin", "cos", "7", "8", "9", "+"],
             ["sin-¹", "cos-¹", "4", "5", "6", "-"],
             ["tan", "tan-¹", "1", "2", "3", "*"],
-            ["n!", "π", ".", "0", "=", "C"]
+            ["n!", "π", ".", "0", "=", "Limpar"]
             ]
         for linha in range(len(self.botoes)):
             for coluna in range(len(self.botoes[linha])):
@@ -65,10 +65,10 @@ class Calculadora:
                         self.addValor(math.factorial(float(self.output.get())))
                     elif texto == "x²":
                         self.addValor(float(self.output.get()) ** 2)
-                    elif texto == "C":
+                    elif texto == "Limpar":
                         self.addValor("")
                     elif texto == "π":
-                        self.addValor(3.1415926535897932)
+                        self.addValor(math.pi)
                     elif texto == "sin":
                         self.addValor(math.sin(float(self.output.get()) * deg))
                     elif texto == "cos":
